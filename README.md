@@ -1,0 +1,38 @@
+# My Django project skeleton layout
+[![Requirements Status](https://requires.io/github/Keats/django-drf-template/requirements.png?branch=master)](https://requires.io/github/Keats/django-drf-template/requirements/?branch=master)
+
+Project template for Django 1.7
+Part of it is based on [Two Scoops of Django template](https://github.com/twoscoops/django-twoscoops-project).
+
+## Install
+You will need Postgres installed and the following ones (for ubuntu/debian, for others systems look in your package managers).
+
+```bash
+$ sudo apt-get install libpq-dev python-dev libffi-dev
+```
+
+Create your virtualenv (examples will use virtualenvwrapper), I will use the name myproject but use your own name.
+
+```bash
+$ mkdir myproject && cd myproject
+$ mkvrirtualenv myproject
+$ pip install django
+$ django-admin.py startproject myproject --template=hhttps://github.com/DanGamble89/Django-Skeleton/archive/master.zip
+$ cd myproject
+$ pip install -r requirements/local.txt
+$ vim project_name/settings/local.py // Edit database settings.
+$ chmod +x manage.py
+$ ./manage.py migrate
+```
+
+If you want, you can also add a pre-commit flake8 hook to ensure that commit respects it.
+
+```bash
+$ flake8 --install-hook
+```
+
+By default it will not stop commits because of warning, a quick look at .git/hooks/pre-commit shows that putting an environment variable of FLAKE8_STRICT will stop them.
+
+
+And with all that, you should be almost good to go.
+There are a few hardcoded temporary settings that you will want to replace, look for the string 'Ann Onymous' and you should find them.
