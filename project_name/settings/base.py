@@ -73,7 +73,7 @@ PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.CryptPasswordHasher',
 )
 
-ROOT_URLCONF = 'test_skeleton.urls'
+ROOT_URLCONF = '{{ project_name }}.urls'
 
 
 DJANGO_APPS = (
@@ -128,4 +128,4 @@ LOGGING = {
     }
 }
 
-WSGI_APPLICATION = 'test_skeleton.wsgi.application'
+WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
