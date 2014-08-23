@@ -1,7 +1,8 @@
 # My Django project skeleton layout
 [![Requirements Status](https://requires.io/github/DanGamble89/Django-Skeleton/requirements.png?branch=master)](https://requires.io/github/DanGamble89/Django-Skeleton/requirements/?branch=master)
 
-Project template for Django 1.7
+Project template for Django 1.7 w/ Foundation
+
 Most of it is based on. [django-drf-template](https://github.com/Keats/django-drf-template) but i stripped out DRF and changed the folder structure a bit to suit what i tend to use.
 
 ## Install
