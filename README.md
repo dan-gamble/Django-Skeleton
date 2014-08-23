@@ -1,8 +1,8 @@
 # My Django project skeleton layout
-[![Requirements Status](https://requires.io/github/Keats/django-drf-template/requirements.png?branch=master)](https://requires.io/github/Keats/django-drf-template/requirements/?branch=master)
+[![Requirements Status](https://requires.io/github/DanGamble89/Django-Skeleton/requirements.png?branch=master)](https://requires.io/github/DanGamble89/Django-Skeleton/requirements/?branch=master)
 
 Project template for Django 1.7
-Part of it is based on [Two Scoops of Django template](https://github.com/twoscoops/django-twoscoops-project).
+Most of it is based on. [django-drf-template](https://github.com/Keats/django-drf-template).
 
 ## Install
 You will need Postgres installed and the following ones (for ubuntu/debian, for others systems look in your package managers).
