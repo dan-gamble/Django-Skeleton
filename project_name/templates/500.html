@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}{% title "Page Not Found" %}{% endblock %}
+
+{% block primary_content %}
+
+    <div class="row">
+
+        <div class="small-12 columns page-404">
+
+            <h2>Server Error</h2>
+            <p>We're sorry, but the page you were looking for cannot be found.</p>
+
+            <hr>
+
+            <h3>Most likely causes</h3>
+
+            <ul>
+                <li>There might be a typing error in the address.</li>
+                <li>If you clicked on a link, it may be out of date.</li>
+            </ul>
+
+            <hr>
+
+            <h3>What you can try</h3>
+
+            <ul>
+                <li>Re-type the address.</li>
+                <li>Go to our <a href="{% url 'homepage' %}">homepage</a> and look for the information you want.</li>
+                <li>Contact us, so we can help you find what you are looking for.</li>
+            </ul>
+
+        </div>
+
+        <div class="small-5 small-offset-1 columns hide-for-medium-down">
+
+            {% block secondary_column %}{% endblock %}
+
+        </div>
+
+    </div>
+
+{% endblock %}
