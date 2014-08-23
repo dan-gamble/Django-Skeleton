@@ -2,7 +2,7 @@
 [![Requirements Status](https://requires.io/github/DanGamble89/Django-Skeleton/requirements.png?branch=master)](https://requires.io/github/DanGamble89/Django-Skeleton/requirements/?branch=master)
 
 Project template for Django 1.7
-Most of it is based on. [django-drf-template](https://github.com/Keats/django-drf-template).
+Most of it is based on. [django-drf-template](https://github.com/Keats/django-drf-template) but i stripped out DRF and changed the folder structure a bit to suit what i tend to use.
 
 ## Install
 You will need Postgres installed and the following ones (for ubuntu/debian, for others systems look in your package managers).
