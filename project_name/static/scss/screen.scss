@@ -1,0 +1,49 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+//  Core Foundation imports
+@import "foundation/normalize";
+@import "compass";
+
+// Local imports
+@import "foundation/settings";
+@import "font-awesome/font-awesome";
+
+// Behold, here are all the Foundation components.
+@import
+    "foundation/foundation/components/grid",
+    "foundation/foundation/components/accordion",
+    "foundation/foundation/components/alert-boxes",
+    "foundation/foundation/components/block-grid",
+    "foundation/foundation/components/breadcrumbs",
+    "foundation/foundation/components/button-groups",
+    "foundation/foundation/components/buttons",
+    "foundation/foundation/components/clearing",
+    "foundation/foundation/components/dropdown",
+    "foundation/foundation/components/dropdown-buttons",
+    "foundation/foundation/components/flex-video",
+    "foundation/foundation/components/forms",
+    "foundation/foundation/components/inline-lists",
+    "foundation/foundation/components/joyride",
+    "foundation/foundation/components/keystrokes",
+    "foundation/foundation/components/labels",
+    "foundation/foundation/components/magellan",
+    "foundation/foundation/components/orbit",
+    "foundation/foundation/components/pagination",
+    "foundation/foundation/components/panels",
+    "foundation/foundation/components/pricing-tables",
+    "foundation/foundation/components/progress-bars",
+    "foundation/foundation/components/range-slider",
+    "foundation/foundation/components/reveal",
+    "foundation/foundation/components/side-nav",
+    "foundation/foundation/components/split-buttons",
+    "foundation/foundation/components/sub-nav",
+    "foundation/foundation/components/switches",
+    "foundation/foundation/components/tables",
+    "foundation/foundation/components/tabs",
+    "foundation/foundation/components/thumbs",
+    "foundation/foundation/components/tooltips",
+    "foundation/foundation/components/top-bar",
+    "foundation/foundation/components/type",
+    "foundation/foundation/components/offcanvas",
+    "foundation/foundation/components/visibility";
