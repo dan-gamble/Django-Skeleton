@@ -18,7 +18,7 @@ Create your virtualenv (examples will use virtualenvwrapper), I will use the nam
 $ mkdir myproject && cd myproject
 $ mkvrirtualenv myproject
 $ pip install django
-$ django-admin.py startproject myproject --template=hhttps://github.com/DanGamble89/Django-Skeleton/archive/master.zip
+$ django-admin.py startproject myproject --template=https://github.com/DanGamble89/Django-Skeleton/archive/master.zip
 $ cd myproject
 $ pip install -r requirements/local.txt
 $ vim project_name/settings/local.py // Edit database settings.
