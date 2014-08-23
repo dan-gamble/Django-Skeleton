@@ -1,12 +1,12 @@
 # flake8: noqa
 
-from os.path import basename, dirname, join, normpath
+import os
 from sys import path
 
 
-BASE_DIR = dirname(dirname(__file__))
-SITE_ROOT = dirname(BASE_DIR)
-SITE_NAME = basename(BASE_DIR)
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+SITE_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+SITE_NAME = os.path.basename(BASE_DIR)
 
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:
@@ -29,12 +29,14 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-MEDIA_ROOT = normpath(join(SITE_ROOT, 'media'))
+MEDIA_ROOT = os.path.join(SITE_ROOT, 'media')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = normpath(join(SITE_ROOT, 'assets'))
+STATIC_ROOT = os.path.join(SITE_ROOT, 'assets')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ()
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -42,11 +44,11 @@ STATICFILES_FINDERS = (
 
 
 # Note: This key should only be used for development and testing.
-SECRET_KEY = r"{{ secret_key }}"
+SECRET_KEY = r"ur97rr4qrrv&fz7egjn7vx#ohgb-r6thho%qn#v#t!@fez507u"
 
 
 TEMPLATE_DIRS = (
-    normpath(join(SITE_ROOT, 'templates')),
+    os.path.join(SITE_ROOT, "templates"),
 )
 
 MIDDLEWARE_CLASSES = (
@@ -71,7 +73,7 @@ PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.CryptPasswordHasher',
 )
 
-ROOT_URLCONF = '{{ project_name }}.urls'
+ROOT_URLCONF = 'test_skeleton.urls'
 
 
 DJANGO_APPS = (
@@ -97,7 +99,7 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    'apps.app'
+    # 'test_skeleton.apps.app',
 )
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -126,4 +128,4 @@ LOGGING = {
     }
 }
 
-WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
+WSGI_APPLICATION = 'test_skeleton.wsgi.application'
