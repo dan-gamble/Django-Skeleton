@@ -1,7 +1,8 @@
 # My Django project skeleton layout
 [![Requirements Status](https://requires.io/github/DanGamble89/Django-Skeleton/requirements.png?branch=master)](https://requires.io/github/DanGamble89/Django-Skeleton/requirements/?branch=master)
 
-Project template for Django 1.7
+Project template for Django 1.7 w/ [Zurb Foundation](https://github.com/zurb/foundation)
+
 Most of it is based on. [django-drf-template](https://github.com/Keats/django-drf-template) but i stripped out DRF and changed the folder structure a bit to suit what i tend to use.
 
 ## Install
@@ -17,7 +18,7 @@ Create your virtualenv (examples will use virtualenvwrapper), I will use the nam
 $ mkdir myproject && cd myproject
 $ mkvrirtualenv myproject
 $ pip install django
-$ django-admin.py startproject myproject --template=hhttps://github.com/DanGamble89/Django-Skeleton/archive/master.zip
+$ django-admin.py startproject myproject --template=https://github.com/DanGamble89/Django-Skeleton/archive/master.zip
 $ cd myproject
 $ pip install -r requirements/local.txt
 $ vim project_name/settings/local.py // Edit database settings.
