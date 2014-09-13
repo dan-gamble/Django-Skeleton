@@ -59,7 +59,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 )
 
 # We're using bcrypt: https://docs.djangoproject.com/en/dev/topics/auth/passwords/#using-bcrypt-with-django
