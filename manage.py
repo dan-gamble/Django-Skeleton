@@ -9,7 +9,7 @@ if __name__ == "__main__":
         'dev': "{{ project_name }}.settings.local"
     }
 
-    if sys.argv[1] == 'test':
+    if 'test' in sys.argv:
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings['test'])
     else:
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings['dev'])

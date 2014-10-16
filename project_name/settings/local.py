@@ -1,6 +1,7 @@
 # flake8: noqa
 
 from .base import *
+import os
 
 
 DEBUG = True
@@ -12,7 +13,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': '{{ project_name }}',  # Database
-        'USER': '{{ user }}',  # Blank normally
+        'USER': os.getlogin(),  # Blank normally
         'PASSWORD': '',  # Blank normally
         'HOST': 'localhost',  # localhost
         'PORT': '',  # Blank normally (5432)
