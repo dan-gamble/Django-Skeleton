@@ -75,8 +75,7 @@ PASSWORD_HASHERS = (
 ROOT_URLCONF = '{{ project_name }}.urls'
 
 
-DJANGO_APPS = (
-    # Default Django apps:
+INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -84,24 +83,14 @@ DJANGO_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Useful template tags:
     'django.contrib.humanize',
 
-    # Admin panel and documentation:
     'django.contrib.admin',
-    # 'django.contrib.admindocs',
+
+    '{{ project_name }}.apps.users',
 )
 
-THIRD_PARTY_APPS = (
-
-)
-
-# Apps specific for this project go here.
-LOCAL_APPS = (
-    'apps.app',
-)
-
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+AUTH_USER_MODEL = 'users.User'
 
 LOGGING = {
     'version': 1,
