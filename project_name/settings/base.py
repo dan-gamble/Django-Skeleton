@@ -87,6 +87,8 @@ INSTALLED_APPS = (
 
     'django.contrib.admin',
 
+    'djcelery',
+
     '{{ project_name }}.apps.users',
 )
 
@@ -117,3 +119,9 @@ LOGGING = {
 }
 
 WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
+
+# Celery
+BROKER_URL = 'amqp://guest:guest@localhost:5672//'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
