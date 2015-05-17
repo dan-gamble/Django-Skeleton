@@ -31,10 +31,16 @@ EMAIL_SUBJECT_PREFIX = '[%s] ' % SITE_NAME
 EMAIL_USE_TLS = True
 SERVER_EMAIL = EMAIL_HOST_USER
 
-DATABASES = {}
-
 CACHES = {}
 
 SECRET_KEY = get_env_setting('SECRET_KEY')
 
 CORS_ORIGIN_WHITELIST = ()
+
+# Cache templates
+TEMPLATE_LOADERS = (
+    ('django.template.loaders.cached.Loader', (
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    )),
+)
