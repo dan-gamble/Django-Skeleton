@@ -5,6 +5,10 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 admin.autodiscover()
 
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+
 urlpatterns = patterns(
     '',
     url(
@@ -12,6 +16,7 @@ urlpatterns = patterns(
         TemplateView.as_view(template_name='base.html'),
         name='homepage'
     ),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', include(admin.site.urls)),
     # url(r'^/app/', include('apps.app.urls', namespace='app')),
 )

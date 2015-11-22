@@ -4,13 +4,13 @@ import os
 from sys import path
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 SITE_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SITE_NAME = os.path.basename(BASE_DIR)
 
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:
-path.append(BASE_DIR)
+path.append(SITE_ROOT)
 
 
 DEBUG = False
@@ -35,21 +35,54 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(SITE_ROOT, 'assets')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(SITE_ROOT, "static"),
 )
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
+ASSET_URL = '/assets/'
+ASSETFILES_ROOT = os.path.join(BASE_DIR, 'assets')
 
 # Note: This key should only be used for development and testing.
 SECRET_KEY = r"ur97rr4qrrv&fz7egjn7vx#ohgb-r6thho%qn#v#t!@fez507u"
 
-
-TEMPLATE_DIRS = (
-    os.path.join(SITE_ROOT, "templates"),
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',
+        'DIRS': [
+            os.path.join(SITE_ROOT, 'jinja'),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'environment': '{{ project_name }}.jinja2.environment',
+            'extensions': [
+                'webpack_loader.contrib.jinja2ext.WebpackExtension',
+            ],
+        }
+    },
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(SITE_ROOT, 'templates')
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                # Insert your TEMPLATE_CONTEXT_PROCESSORS here or use this
+                # list if you haven't customized them:
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
 MIDDLEWARE_CLASSES = (
     # Default Django middleware.
@@ -82,12 +115,10 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'django.contrib.humanize',
-
     'django.contrib.admin',
 
-    'djcelery',
+    'rest_framework',
 
     '{{ project_name }}.apps.users',
 )
@@ -119,9 +150,3 @@ LOGGING = {
 }
 
 WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
-
-# Celery
-BROKER_URL = 'amqp://guest:guest@localhost:5672//'
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
